@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeView" customModule="TheMoviesApp" customModuleProvider="target">
+            <connections>
+                <outlet property="activity" destination="q88-KW-paC" id="gk0-Z5-dQx"/>
+                <outlet property="tableView" destination="4qy-lB-rAz" id="WyB-Ih-oeW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4qy-lB-rAz">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gWm-mE-yS0"/>
+                        <outlet property="delegate" destination="-1" id="D4n-fq-52j"/>
+                    </connections>
+                </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="q88-KW-paC">
+                    <rect key="frame" x="188.5" y="307" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="37" id="57L-Jc-hLA"/>
+                        <constraint firstAttribute="height" constant="37" id="TIF-sk-S6U"/>
+                    </constraints>
+                    <color key="color" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4qy-lB-rAz" secondAttribute="trailing" id="37c-u3-1g3"/>
+                <constraint firstItem="4qy-lB-rAz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9Ir-UQ-lrR"/>
+                <constraint firstItem="4qy-lB-rAz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mt0-Nl-jLY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4qy-lB-rAz" secondAttribute="bottom" id="PmU-a9-MNd"/>
+                <constraint firstItem="q88-KW-paC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="263" id="WGr-ng-cMO"/>
+                <constraint firstItem="q88-KW-paC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qf5-Vp-UCe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="133" y="140"/>
+        </view>
+    </objects>
+</document>
