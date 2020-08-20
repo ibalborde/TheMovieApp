@@ -27,4 +27,8 @@ class DetailViewModel {
         return managerConnections.getDetailMovies(movieID: movieID)
     }
     
+    func getImageMovie(urlString: String) -> Observable<UIImage> {
+        return managerConnections.getImageFromServer(urlString: urlString)
+    }
+    
 }

@@ -43,15 +43,30 @@ class DetailView: UIViewController {
            onCompleted: {
             }).disposed(by: disposeBag)
     }
+    
+    private func getImageMovie(movie: MovieDetail) {
+        return viewModel.getImageMovie(urlString: Constants.URL.urlImages+movie.posterPath)
+            .subscribe(
+                onNext: { image in
+                    DispatchQueue.main.sync {
+                        self.imageFilm.image = image
+                    }
+                },
+                onError: { error in
+                    print(error.localizedDescription)
+                },
+                onCompleted: {
+            }).disposed(by: disposeBag)
+    }
 
     func showMovieData(movie: MovieDetail) {
         DispatchQueue.main.async {
             self.titleHeader.text = movie.title
-            self.imageFilm.imageFromServerURL(urlString: Constants.URL.urlImages+movie.posterPath, placeHolderImage: UIImage(named: "claqueta")!)
             self.descriptionMovie.text = movie.overview
             self.releaseDate.text = movie.releaseDate
             self.originalTitle.text = movie.originalTitle
             self.voteAverage.text = String(movie.voteAverage)
+            self.getImageMovie(movie: movie)
         }
     }
 }
