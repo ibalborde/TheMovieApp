@@ -105,8 +105,7 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomMovieCell") as! CustomMovieCell
         
         if searchController.isActive && searchController.searchBar.text != "" {
-//            cell.imageMovie.imageFromServerURL(urlString: "\(Constants.URL.urlImages+self.filteredMovies[indexPath.row].image)", placeHolderImage: UIImage(named: "claqueta")!)
-            
+            cell.imageMovie.imageFromServerURL(urlString: "\(Constants.URL.urlImages+self.filteredMovies[indexPath.row].image)", placeHolderImage: UIImage(named: "claqueta")!)            
             cell.titleMovie.text = filteredMovies[indexPath.row].title
             cell.descriptionMovie.text = filteredMovies[indexPath.row].sinopsis
         }
